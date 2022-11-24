@@ -93,7 +93,7 @@ static void bt_hid_keynote_draw_callback(Canvas* canvas, void* context) {
         canvas_set_color(canvas, ColorWhite);
     }
     canvas_draw_icon(canvas, 74, 29, &I_Ok_btn_9x9);
-    elements_multiline_text_aligned(canvas, 91, 36, AlignLeft, AlignBottom, "Space");
+    elements_multiline_text_aligned(canvas, 91, 36, AlignLeft, AlignBottom, "Enter");
     canvas_set_color(canvas, ColorBlack);
 
     // Back
@@ -126,7 +126,7 @@ static void bt_hid_keynote_process(BtHidKeynote* bt_hid_keynote, InputEvent* eve
                     furi_hal_bt_hid_kb_press(HID_KEYBOARD_RIGHT_ARROW);
                 } else if(event->key == InputKeyOk) {
                     model->ok_pressed = true;
-                    furi_hal_bt_hid_kb_press(HID_KEYBOARD_SPACEBAR);
+                    furi_hal_bt_hid_kb_press(HID_KEYBOARD_ENTER);
                 } else if(event->key == InputKeyBack) {
                     model->back_pressed = true;
                 }
@@ -145,7 +145,7 @@ static void bt_hid_keynote_process(BtHidKeynote* bt_hid_keynote, InputEvent* eve
                     furi_hal_bt_hid_kb_release(HID_KEYBOARD_RIGHT_ARROW);
                 } else if(event->key == InputKeyOk) {
                     model->ok_pressed = false;
-                    furi_hal_bt_hid_kb_release(HID_KEYBOARD_SPACEBAR);
+                    furi_hal_bt_hid_kb_release(HID_KEYBOARD_ENTER);
                 } else if(event->key == InputKeyBack) {
                     model->back_pressed = false;
                 }
